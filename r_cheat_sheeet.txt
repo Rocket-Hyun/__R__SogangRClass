@@ -146,3 +146,7 @@ str(데이터프레임)
 write.table(데이터프레임, file="파일명", quote=F, sep="\t"(텝문자), col.names=NA (맨 왼쪽 위가 비어있게된다.))
 
 Data <- read.delim(file="파일명", sep="\t", header=T(첫번째 라인을 컬럼 명으로 불러온다.), row.names=1 (첫번 째 컬럼을 행제목으로 넣겠다.), quote=NULL)
+
+테이블에
+unname(테이블) 하면 빈도 값들만 남는다.
+as.vector(테이블) 해도 똑같이 빈도 값들만 남는다.
