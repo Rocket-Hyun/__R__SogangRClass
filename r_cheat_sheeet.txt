@@ -1,0 +1,123 @@
+벡터 파일 불러오기
+scan(file="clipboard/파일명/"/file.choose(), what="char"/character()/numeric(), quote=NULL)
+#quote=NULL을 안쓰면 텍스트 데이터에서 "a computer"을 하나의 데이터로 불러온다.
+
+벡터 파일 텍스트로 저장
+cat(벡터, file="파일명", sep="\n")
+cat(벡터, file="파일명", sep="\n", append=T) *append 안쓰면 덮어쓰기
+
+
+str()
+head(TEXT)
+head(TEXT, 10)
+tail(TEXT)
+tail(TEXT, 10)
+length(벡터)
+*length 용도
+  1) 벡터의 크기
+  2) True 값의 개수 length(which(참거짓벡터))
+  3) 마지막 index값 구할때 letters[length(letters)]
+sample(벡터, size=5, replace=T/F)
+sample(벡터, 5, T)
+sample(벡터, size, T, prob=첫 번째 논항의 벡터와 크기가 같은 벡터)
+rep(벡터, 숫자)
+seq(시작숫자, 끝숫자) *기본 공차1
+seq(시작숫자, 끝숫자, (by=)2)
+seq(시작숫자, 끝숫자, length.out=5) *by랑 length.out이랑 같이 못씀
+총 몇구간으로 나눌지
+
+names(네임드벡터)
+네임드벡터의 이름 값들을 불러오는 함수 (인용구호가 붙는다.)
+names(벡터) <- 벡터
+네임드벡터를 정의하는 함수
+
+조건을 이용한 검색/추출
+TEXT[TEXT=="a"]
+
+결과가 없으면
+결과값 charactre(0)
+
+as.numeric(data)
+as.character(벡터)
+
+round(벡터) * 안쓰면 정수까지
+round(벡터, n) *n자리까지 / 반올림 기준 6
+
+letters[-벡터] * 그 값들을 제외한
+letters[-1:10] 이건 안됨
+letters[-c(1:10)]
+
+& / |
+
+letters=="a"|"b"
+에러
+
+sum(숫자벡터) => 총합
+sum(참거짓벡터) => TRUE 개수
+
+table(벡터)
+=> 데이터 구조 테이블!
+결과값
+벡터 변수명이 처음 나옴
+
+표제
+빈도값
+
+으로 만들어짐
+
+table(참거짓 벡터)면
+벡터 변수명이 없는 테이블 데이터 구조가 나옴
+FALSE TRUE
+9      1
+이렇게 나옴
+
+which(참거짓벡터)
+
+True에 해당되는 인덱스 값들이 출력됨
+
+
+value matching
+match(벡터, 벡터)
+출력값: 벡터
+앞에 벡터 값들을 기준으로 뒤에 벡터에 있는 값들의 인덱스가 나옴
+없으면 인용구호 없이 NA
+
+벡터 %in% 벡터
+앞에 벡터 기준으로 뒤에 벡터에 있는지 없느지에 따라서 TRUE FALSE가 나옴
+
+unique(벡터)
+같은 값들은 지워버린 후 벡터를 반환
+
+union(벡터,벡터)
+합집합
+앞에 있는 벡터들 일단 다 써주고, 뒤에 있는 벡터 중 앞에 벡터에 없던 값들을 넣어준다.
+
+intersect(벡터, 벡터)
+교집합
+똑같이 앞에 있는 벡터 기준
+
+setdiff(벡터, 벡터)
+앞에 벡터에서 뒤에벡터를 빼준 후 남는 유니크한 값들
+
+any(조건문)
+조건이 하나라도 맞으면 결과 값 TRUE 1개인 벡터
+모두 틀리면 FALSE
+
+all(조건문)
+조건이 모두 맞아야 TRUE 1개
+
+벡터 정렬
+
+sort(벡터)
+*자동으로 오름차순
+sort(벡터, decreasing=T)
+*내림차순
+
+sort(테이블)
+하면 Frequency 오름차순으로 정렬됨
+
+order(벡터)
+sort(벡터)를 한 것들의 원래 벡터에서의 인덱스값
+
+즉,
+벡터[order(벡터)] == sort(벡터)
