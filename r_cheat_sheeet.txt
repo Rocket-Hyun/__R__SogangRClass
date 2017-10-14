@@ -99,6 +99,9 @@ intersect(벡터, 벡터)
 setdiff(벡터, 벡터)
 앞에 벡터에서 뒤에벡터를 빼준 후 남는 유니크한 값들
 
+unique(벡터1[!(벡터1 %in % 벡터2)])
+setdiff랑 같은 결과
+
 any(조건문)
 조건이 하나라도 맞으면 결과 값 TRUE 1개인 벡터
 모두 틀리면 FALSE
@@ -117,7 +120,24 @@ sort(테이블)
 하면 Frequency 오름차순으로 정렬됨
 
 order(벡터)
+order(벡터, 벡터)면 첫 번째 것에서 동점일 경우 그 다음 벡터에서 순서로!
 sort(벡터)를 한 것들의 원래 벡터에서의 인덱스값
+
+rank()와 order의 차지
+rank는 각 element들의 순서를 메긴값
+order은 element들을 순서대로 정렬 했을때 원래 벡터에 해당하는 element의 index값을 리턴 
 
 즉,
 벡터[order(벡터)] == sort(벡터)
+
+R의 두 번째 데이터 구조
+
+"데이터프레임"
+변수 <- data.frame(row.names=벡터, col이름=벡터, col이름=벡터...)
+* col이름은 인용구호가 붙지 않는다.
+변수 <- data.frame(데이터프레임, col이름=벡터, col이름=벡터...)
+이렇게 쓰면 기존 데이터 프레임에 col이 추가 된다.
+
+str(벡터)
+str(데이터프레임)
+의 출력값 차이점을 봐라!!
