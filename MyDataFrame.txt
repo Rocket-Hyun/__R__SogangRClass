@@ -1,0 +1,5 @@
+	English	Math	Mean	Sum
+Junghyun	100	60	80	160
+Dadu	90	80	85	170
+Gons	100	40	70	140
+Jungz	80	100	90	180

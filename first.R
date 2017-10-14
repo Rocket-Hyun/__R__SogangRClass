@@ -18,3 +18,7 @@ attributes(x)
 attributes(table(unname(x)))
 attributes(DATA)
 attributes(DATA)$row.names
+DATA
+write.table(DATA, file="MyDataFrame.txt", quote=F, sep="\t", col.names = NA)
+Data <- read.delim(file="MyDataFrame.txt", sep="\t",header=T,row.names=1,quote=NULL)
+Data

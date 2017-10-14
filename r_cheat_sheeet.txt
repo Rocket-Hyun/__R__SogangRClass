@@ -125,7 +125,7 @@ sort(벡터)를 한 것들의 원래 벡터에서의 인덱스값
 
 rank()와 order의 차지
 rank는 각 element들의 순서를 메긴값
-order은 element들을 순서대로 정렬 했을때 원래 벡터에 해당하는 element의 index값을 리턴 
+order은 element들을 순서대로 정렬 했을때 원래 벡터에 해당하는 element의 index값을 리턴
 
 즉,
 벡터[order(벡터)] == sort(벡터)
@@ -141,3 +141,8 @@ R의 두 번째 데이터 구조
 str(벡터)
 str(데이터프레임)
 의 출력값 차이점을 봐라!!
+
+데이터 프레임의 파일 저장
+write.table(데이터프레임, file="파일명", quote=F, sep="\t"(텝문자), col.names=NA (맨 왼쪽 위가 비어있게된다.))
+
+Data <- read.delim(file="파일명", sep="\t", header=T(첫번째 라인을 컬럼 명으로 불러온다.), row.names=1 (첫번 째 컬럼을 행제목으로 넣겠다.), quote=NULL)
