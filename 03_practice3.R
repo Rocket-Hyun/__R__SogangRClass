@@ -26,3 +26,4 @@ Freq.Data <- data.frame(row.names = Freq.Data$TEXT, Freq=Freq.Data$Freq,Rel.Freq
 Freq.Data <- Freq.Data[order(Freq.Data$Freq,decreasing=T),]
 write.table(Freq.Data, file="practiceFreq.txt", sep="\t", quote=F, col.names = NA)
 
+head(Freq.Data[order(-rank(rownames(Freq.Data))),])
