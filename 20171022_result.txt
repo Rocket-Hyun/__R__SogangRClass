@@ -1,0 +1,166 @@
+> 2 + 2
+[1] 4
+> 2 +
++ 2
+[1] 4
+> 2 + 4; (4*2)^2
+[1] 6
+[1] 64
+> x <- c(1,5,3)
+> c(3,9,10)
+[1] 3 9 10
+> x
+[1] 1 5 3
+> is.vector(x)
+[1] TRUE
+> x <- c(1,3,5,7,9)
+> y <- c(2,4,6,8,10)
+> z <- x + y
+> z
+[1] 3 7 11 15 19
+> z * c(2, 4, 5)
+[1] 6 28 55 30 76
+Warning message:
+~~
+> z * 1:10
+[1] 3 14 33 60 95 ~
+
+> x <- c("A", "B", "C")
+> x
+[1] "A" "B" "C"
+
+> a <- c(1,2,"3")
+> a
+[1] "1" "2" "3"
+> b <- c(1,2,"A")
+> b
+[1] "1" "2" "A"
+> data <- c(1,2,3)
+> sample(data, size=5, replace=T)
+[1] 1 2 2 1 3
+> sample(data, 5, T)
+[1] 2 3 2 1 3
+> sample(data, size=5, replace=T,
++ prob=c(0.2, 0.2, 0.8)
+[1]  3 3 2 3 1
+> x <- sample(10)
+> x
+[1] 7 3 6 2 9 10 5 4 1 8
+> y <- sample(letters, 3,
++              replace=F)
+[1] "l" "n" "v"
+
+> str(x)
+  int [1:10] 7 3 6 2 9 10
+> str(y)
+  int [1:3] "l" "n" "v"
+> c <- c(TRUE, TRUE, FALSE)
+> str(c)
+  logi [1:3] TRUE TRUE FALSE
+> rep(c(1,2,3), 4)
+  [1] 1 2 3 1 2 3 1 2 3 1 2 3
+> seq(5, 15, 5)
+  [1] 5 10 15
+> rep(seq(1, 10, by=2), 2)
+  [1] 1 3 5 7 9 1 3 5 7 9
+> seq(1, 10, length.out=5)
+  [1] 1  2.5  5  7.5  10
+> seq(1, 10, lenght.out=2)
+  [1] 1 10
+
+> x <- 1:3
+> str(x)
+  int [1:3] 1 2 3
+> names(x) <- c("one", "two", "three")
+> x
+  one two three
+    1   2     3
+> str(x)
+  Named int [1:3] 1 2 3
+  - attr(*, "names")= chr [1:3] "one" "two" "three"
+> attributes(x)
+  $names
+  [1] "one" "two" "three"
+> unname(x)
+  [1] 1 2 3
+> scan(file=file.choose(), what=numberic())
+  Read 5 items
+  [1] 1 2 3 4 5
+> y <- scan(file="hello.txt", what=character())
+  Read 5 items
+> data <- scan(file = "clipboard", what=character())
+  Read 361 items
+> cat(data, file="out.txt", sep="\t", append=T)
+> data
+  [1] "1" "2" "3" "4" "5"
+> as.numeric(data)
+  [1] 1 2 3 4 5
+> as.character(as.numeric(data))
+  [1] "1" "2" "3" "4" "5"
+> data2 <- c("one", 'two')
+> data2
+  [1] "one" "two"
+> as.numeric(data2)
+  [1] NA NA
+> x <- seq(3.4, 3.49, 0.01)
+> x
+  [1] 3.4 3.41 3.42 3.43 3.44 3.45 3.46 3.47 3.48 3.49
+> round(x, 1)
+  [1] 3.4 3.4 3.4 3.4 3.4 3.4 3.5, 3.5 3.5 3.5
+> letters[c(1,3,5)]
+  [1] "a" "c" "e"
+> letters[seq(1, length(letters), 3)]
+  [1] "a" "d" "g"..
+> letters[-c(1,3,5)]
+  [1] "b" "d" "f" ...
+> -1:10
+  [1] -1 0 1 2 3 4 5 6 7 8 9 10
+> letters[-1:10]
+Error in letters[-1:10] - 인덱스에 음수 값과 양수 값디 같이 들어갈 수 없다.
+> letters[-c(1:10)]
+  [1] "k" "l" "m" .. "z"
+> letters=="a"
+  [1] TRUE FALASE FALSE FALSE ... FALSE
+> letters=="a" | "b"
+에러
+> letters=="a" | letters=="b"
+  [1] TRUE TRUE FALSE FALSE
+> letters[letters=="a"]
+  [1] "a"
+> letters[letters="a" | letters="b"]
+  [1] "a" "b"
+> letters[letters!="a"&letters!="b"]
+  [1] "c" "d" "e" ...
+> x <- 10:1
+> x
+  [1] 10 9 8 7 6 5 4 3 2 1
+> str(x)
+  int [1:10] 10 9 8 7 6 5 4 3 2 1
+> sum(x)
+  [1] 55
+> sum(x==4)
+  [1] 1
+> table(x)
+  x
+  1 2 3 4 5 6 7 8 9 10
+  1 1 1 1 1 1 1 1 1  1
+> table(x==4)
+
+FALSE TRUE
+    9    1
+> x[which(x>3&x<6)]
+  [1] 5 4
+> x[which(x==4)]
+  [1] 4
+> length(which(letters=="a"|letters=="b"))
+  [1] 2
+> length(which(letters!="a"&letters!="b"))
+  [1] 24
+> x <- c("a","b","c","d")
+> y <- c("g","x","d","e","f","a","c")
+> match(x,y)
+  [1] 6 NA 7 3
+> match(y,x)
+  [1] Na NA 4 NA NA 1 3
+> x %in% y
+  [1] TRUE FALSE TRUE TRUE
