@@ -17,6 +17,7 @@ table(TEXT3)
 mytable <- sort(table(TEXT3), decreasing=T)
 head(mytable)
 DF <- data.frame(mytable)
-DF <- data.frame(row.names = DF$TEXT, Freq=DF$Freq, Rel.Freq=DF$Freq/sum(DF$Freq))
+DF <- data.frame(row.names = DF$TEXT3, Freq=DF$Freq, Rel.Freq=DF$Freq/sum(DF$Freq))
 head(DF)
 write.table(DF, file="20171019Practice.txt", sep="\t", quote=F, col.names = NA)
+

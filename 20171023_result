@@ -1,0 +1,95 @@
+> a = "test me"
+> b= 10
+> a
+ [1] "test me"
+> b
+ [1] 10
+> class(a)
+ [1] "character"
+> class(b)
+ [1] "numeric"
+> a <- c("a", "b", 2)
+> b <- c(1,2,3)
+> is.character(b)
+ [1] FALSE
+> is.numeric(b)
+ [1] TRUE
+> as.character(b)
+ [1] "1" "2" "3"
+> as.numeric(a)
+ [1] NA NA 2
+ Warning message
+ 
+> 1:5
+ [1] 1 2 3 4 5
+
+> str(1:5)
+ int [1:5] 1 2 3 4 5
+
+> str(letters[1:4])
+ chr [1:4] "a" "b" "c" "d"
+
+> str(c(letters[1:5], 1:3))
+ chr [1:8] "a" "b" "c" "d" "e" "1" "2" "3"
+
+> is.character(c(letters[1:5], 1:3))
+ [1] TRUE
+
+> as.character(1:5)
+ [1] "1" "2" "3" "4" "5"
+
+> str(as.character(1:5))
+ chr [1:5] "1" "2" "3" "4" "5"
+
+> class(1:5)
+ [1] "integer"
+
+> class(c(1,2,3))
+ [1] "numeric"
+ 
+> x <- (sample(c("low", "mid", "high"), 10, replace=T))
+> y <- factor(x)
+> y
+ [1] high low mid low mid
+ Levels: high low mid
+> str(x)
+  chr [1:10] "high" "low" "mid"
+> str(y)
+ Factor w/ 3 levels "high", "low", "mid": 3 2 3 3 3
+> summary(y)
+high low mid
+   1   1   8
+> table(y)
+y
+high low mid
+   1   1   8
+> y <- factor(x, levels=c("low", "mid", "high"))
+> y
+ [1] high low mid low mid
+Levels: low mid high
+> levels(y)
+
+
+> a <- sample(1:3, 20, replace=T)
+> str(a)
+ int [1:20] 2 2 3 3 1 1 2 1 1 2 ...
+> summary(a)
+  Min. 1st Qu. Median Mean 3rd Qu. Max.
+    1       1     2      2      3     3
+> b <- as.character(a)
+> str(b)
+ chr [1:20] "2" "2" "3" "3"
+> summary(b)
+ Length Class     Mode
+     20 character character
+> c <- as.factor(b)
+> c
+ [1] 2 2 3 3 1 1 2 1 1 2 
+ Levels: 1 2 3 
+> str(c)
+ Factor w/ 3 levels: "1", "2", "3": 2 2 3 3 1 1 
+> summary(c)
+ 1 2 3
+ 7 6 7
+
+> summary(b)
