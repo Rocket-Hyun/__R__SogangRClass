@@ -21,6 +21,9 @@ sample(벡터, size=5, replace=T/F)
 sample(벡터, 5, T)
 sample(벡터, size, T, prob=첫 번째 논항의 벡터와 크기가 같은 벡터)
 rep(벡터, 숫자)
+rep(벡터, 벡터)
+  rep(c("a","b","c"), c(1,3,2))
+    [1] "a" "b" "b" "b" "c" "c"
 seq(시작숫자, 끝숫자) *기본 공차1
 seq(시작숫자, 끝숫자, (by=)2)
 seq(시작숫자, 끝숫자, length.out=5) *by랑 length.out이랑 같이 못씀

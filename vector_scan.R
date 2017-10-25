@@ -1,0 +1,6 @@
+TEXT1 <- scan(file="dummy1.txt", what="char", quote=NULL)
+cleanTEXT1<- gsub("[[:punct:]]", "", TEXT1)
+TEXT2 <- scan(file="dummy1.txt", what="char", quote=NULL)
+cleanTEXT2<- gsub("[[:punct:]]", "", TEXT2)
+cat(cleanTEXT1, file="test1.txt", sep=",")
+cat(cleanTEXT2, file="test2.txt", sep=",")
