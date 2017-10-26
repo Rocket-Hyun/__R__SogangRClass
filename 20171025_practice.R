@@ -5,13 +5,21 @@ a[c(TRUE, FALSE, TRUE)]
 a[3]
 b <- c(TRUE, TRUE,FALSE, TRUE)
 
+a <- c(1,3,5,7)
+names(a) <- letters
 a
-names(a) <- 1:26
-a
+str(a)
+class(a)
 a <- c("동","순","자")
+a<- factor(a)
+table(a)
+summary(a)
+class(a)
+str(a)
 b <- c("M","F", "F")
 c <- c("A", "B", "C")
 DF <- data.frame(row.names=a, 성별=b, 학점=c)
+str(DF)
 DF[ order(-rank(DF$성별), -rank(rownames(DF)) ,rank(DF$학점)), ]
 rownames(DF)
 which(colnames(DF) == "학점")
@@ -20,6 +28,7 @@ TEXT <- scan(file="howtostartastartup.txt", what="char", quote=NULL)
 TEXT2 <- gsub("[[:punct:]]", "", TEXT)
 TEXT3 <- tolower(TEXT2)
 TEXT.Freq <- table(TEXT3)
+str(TEXT.Freq)
 head(TEXT.Freq)
 head(sort(TEXT.Freq))
 head(TEXT.Freq[order(-rank(names(TEXT.Freq)))])
