@@ -1,3 +1,8 @@
 TEXT <- scan(file="03_CakeRecipe.txt", what="char", quote=NULL)
-head(TEXT,20)
-tail(TEXT,20)
+TEXT <- gsub("^[[:punct:]]+|[[:punct:]]+$", "", TEXT)
+TEXT <- tolower(TEXT)
+TEXTtable <-sort(table(TEXT), decreasing=T)
+TEXT.Freq <- data.frame(TEXTtable)
+TEXT.Freq <- data.frame(row.names=TEXT.Freq$TEXT, Freq=TEXT.Freq$Freq)
+head(TEXT.Freq)
+
