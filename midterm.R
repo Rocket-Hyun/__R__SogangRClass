@@ -17,3 +17,6 @@ levels(factor(a))
 names(table(a))
 TEXT <- scan(file="02_data03.txt", what=numeric(), sep=",")
 cat(TEXT, file="02_data03.txt",sep="\n",append=T)
+
+grade <- c(0,8,10,12,13,14,15,19,21,22,25,26,27,28,29,30)
+summary(grade)
